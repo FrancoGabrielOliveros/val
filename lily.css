@@ -1,0 +1,282 @@
+body {
+    all: unset;
+    background-color: #CF9FFF;
+}
+.background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    justify-self: center;
+    z-index: 0;
+}
+
+.flower-container {
+    margin: calc(100vh - 100vmin) auto 0 auto;
+    width: 100vmin;
+    height: 100vmin;
+    bottom: 0;
+    position: relative;
+    animation: 2s flower-wave infinite alternate;
+}
+
+.stock {
+    position: absolute;
+}
+.stock.main {
+    width: 45%;
+    bottom: -2%;
+    left: 25%;
+    opacity: 0;
+    animation: 1s main-stock 5s forwards;
+}
+
+.stock.second {
+    width: 10%;
+    bottom: 23%;
+    left: 35%;
+    opacity: 0;
+    animation: 1s other-stock 6s forwards;
+}
+
+.stock.third {
+    width: 7%;
+    bottom: 40%;
+    left: 40%;
+    opacity: 0;
+    animation: 1s other-stock 6.5s forwards;
+}
+
+.stock.fourth {
+    width: 6%;
+    bottom: 56%;
+    left: 44%;
+    opacity: 0;
+    animation: 1s other-stock 7s forwards;
+}
+
+.stock.fifth {
+    width: 6%;
+    bottom: 72%;
+    left: 54%;
+    opacity: 0;
+    animation: 1s other-stock 7.5s forwards;
+}
+
+.petal {
+    animation: 2s flower-rotate infinite alternate;
+    position: absolute;
+    z-index: 1;
+}
+
+.petal.first {
+    width: 8%;
+    bottom: 68%;
+    left: 67%;
+    opacity: 0;
+    animation: 1s flower-growth 8.5s forwards;
+}
+
+.petal.second {
+    width: 10%;
+    bottom: 63%;
+    left: 54%;
+    rotate: 15deg;
+    opacity: 0;
+    animation: 1s flower-growth 9s forwards;
+}
+
+.petal.third {
+    width: 12%;
+    bottom: 48%;
+    left: 46%;
+    rotate: -15deg;
+    opacity: 0;
+    animation: 1s flower-growth 9.5s forwards;
+}
+
+.petal.fourth {
+    width: 14%;
+    bottom: 28%;
+    left: 41%;
+    opacity: 0;
+    animation: 1s flower-growth 10s forwards;
+}
+
+.petal.fifth {
+    width: 16%;
+    bottom: 10%;
+    left: 37%;
+    opacity: 0;
+    animation: 1s flower-growth 10.5s forwards;
+}
+
+.particle {
+    background-image: radial-gradient(rgb(255, 255, 255) 10%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 90%);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    opacity: 0;
+}
+
+.particle.a {
+    position: absolute;
+    left: 70%;
+    bottom: 70%;
+    animation: 5s falling-particle ease-out 10.5s infinite forwards;
+}
+.particle.b {
+    position: absolute;
+    left: 67%;
+    bottom: 70%;
+    animation: 7s falling-particle ease-out 18.5s infinite forwards;
+}
+.particle.c {
+    position: absolute;
+    left: 72%;
+    bottom: 70%;
+    animation: 7s falling-particle ease-out 16.5s infinite forwards;
+}
+.particle.d {
+    position: absolute;
+    left: 55%;
+    bottom: 65%;
+    animation: 5s falling-particle ease-out 16.5s infinite forwards;
+}
+.particle.e {
+    position: absolute;
+    left: 58%;
+    bottom: 65%;
+    animation: 5s falling-particle ease-out 17.5s infinite forwards;
+}
+.particle.f {
+    position: absolute;
+    left: 55%;
+    bottom: 50%;
+    animation: 7s falling-particle ease-out 16.6s infinite forwards;
+}
+.particle.g {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    animation: 5s falling-particle ease-out 14.5s infinite forwards;
+}
+.particle.h {
+    position: absolute;
+    left: 45%;
+    bottom: 30%;
+    animation: 5s falling-particle ease-out 17.5s infinite forwards;
+}
+.particle.i {
+    position: absolute;
+    left: 42%;
+    bottom: 30%;
+    animation: 7s falling-particle ease-out 13.5s infinite forwards;
+}
+.particle.j {
+    position: absolute;
+    left: 55%;
+    bottom: 65%;
+    animation: 5s falling-particle ease-out 20.5s infinite forwards;
+}
+.particle.k {
+    position: absolute;
+    left: 43%;
+    bottom: 12%;
+    animation: 5s falling-particle ease-out 20.5s infinite forwards;
+}
+.particle.l {
+    position: absolute;
+    left: 58%;
+    bottom: 70%;
+    animation: 7s falling-particle ease-out 18.5s infinite forwards;
+}
+.particle.m {
+    position: absolute;
+    left: 48%;
+    bottom: 12%;
+    animation: 5s falling-particle ease-out 15.5s infinite forwards;
+}
+.particle.n {
+    position: absolute;
+    left: 70%;
+    bottom: 70%;
+    animation: 7s falling-particle ease-out 15.5s infinite forwards;
+}
+
+@keyframes flower-wave {
+    0% {
+        transform-origin: bottom;
+        transform: rotate(0deg);
+    }
+    100% {
+        transform-origin: bottom;
+        transform: rotate(5deg);
+    }
+}
+
+@keyframes flower-rotate {
+    0% {
+        transform-origin: top;
+        transform: rotate(0deg);
+    }
+    100% {
+        transform-origin: top;
+        transform: rotate(15deg);
+    }
+}
+
+@keyframes falling-particle {
+    0% {
+        transform: translateY(0px);
+        opacity: 0;
+    }
+    10% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(500px);
+        opacity: 0;
+    }
+}
+
+@keyframes main-stock {
+    0% {
+        transform-origin: bottom;
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform-origin: bottom;
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes other-stock {
+    0% {
+        transform-origin: top left;
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform-origin: top left;
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes flower-growth {
+    0% {
+        transform-origin: top;
+        transform: rotate(-45deg) scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform-origin: top;
+        transform: rotate(0deg) scale(1);
+        opacity: 1;
+    }
+}
+
