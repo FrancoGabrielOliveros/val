@@ -1,6 +1,7 @@
 body {
     all: unset;
-    background-color: #CF9FFF;
+    background-color: #cf9fff;
+    overflow: hidden;
 }
 .background {
     position: fixed;
@@ -12,12 +13,13 @@ body {
 }
 
 .flower-container {
-    margin: calc(100vh - 100vmin) auto 0 auto;
+    margin: calc(100dvh - 100vmin) auto 0 auto;
     width: 100vmin;
     height: 100vmin;
     bottom: 0;
+    overflow: hidden;
     position: relative;
-    animation: 2s flower-wave infinite alternate;
+    animation: 2s flower-wave 13s infinite alternate;
 }
 
 .stock {
@@ -64,7 +66,6 @@ body {
 }
 
 .petal {
-    animation: 2s flower-rotate infinite alternate;
     position: absolute;
     z-index: 1;
 }
@@ -74,7 +75,7 @@ body {
     bottom: 68%;
     left: 67%;
     opacity: 0;
-    animation: 1s flower-growth 8.5s forwards;
+    animation: 1s flower-growth 8.5s forwards, 2s flower-rotate 13s infinite alternate;
 }
 
 .petal.second {
@@ -83,7 +84,7 @@ body {
     left: 54%;
     rotate: 15deg;
     opacity: 0;
-    animation: 1s flower-growth 9s forwards;
+    animation: 1s flower-growth 9s forwards, 2s flower-rotate 13s infinite alternate;
 }
 
 .petal.third {
@@ -92,7 +93,7 @@ body {
     left: 46%;
     rotate: -15deg;
     opacity: 0;
-    animation: 1s flower-growth 9.5s forwards;
+    animation: 1s flower-growth 9.5s forwards, 2s flower-rotate 13s infinite alternate;
 }
 
 .petal.fourth {
@@ -100,7 +101,7 @@ body {
     bottom: 28%;
     left: 41%;
     opacity: 0;
-    animation: 1s flower-growth 10s forwards;
+    animation: 1s flower-growth 10s forwards, 2s flower-rotate 13s infinite alternate;
 }
 
 .petal.fifth {
@@ -108,13 +109,13 @@ body {
     bottom: 10%;
     left: 37%;
     opacity: 0;
-    animation: 1s flower-growth 10.5s forwards;
+    animation: 1s flower-growth 10.5s forwards, 2s flower-rotate 13s infinite alternate;
 }
 
 .particle {
     background-image: radial-gradient(rgb(255, 255, 255) 10%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 90%);
-    width: 15px;
-    height: 15px;
+    width: 2%;
+    height: 2%;
     border-radius: 50%;
     opacity: 0;
 }
@@ -183,7 +184,7 @@ body {
     position: absolute;
     left: 43%;
     bottom: 12%;
-    animation: 5s falling-particle ease-out 20.5s infinite forwards;
+    animation: 5s falling-particle ease-out 21.5s infinite forwards;
 }
 .particle.l {
     position: absolute;
@@ -228,15 +229,15 @@ body {
 
 @keyframes falling-particle {
     0% {
-        transform: translateY(0px);
+        transform: translateY(0);
         opacity: 0;
     }
     10% {
-        transform: translateY(0px);
+        transform: translateY(0);
         opacity: 1;
     }
     100% {
-        transform: translateY(500px);
+        transform: translateY(40dvh);
         opacity: 0;
     }
 }
@@ -279,4 +280,3 @@ body {
         opacity: 1;
     }
 }
-
